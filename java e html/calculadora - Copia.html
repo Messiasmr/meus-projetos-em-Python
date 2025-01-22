@@ -1,0 +1,115 @@
+#calculadora com imagem feito por messias#
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Anime</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url(''); 
+      background-clip:  url('https://www.youtube.com/watch?v=XeqgX3kwfH4');
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .calculadora {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 320px;
+    }
+    .display {
+      width: 100%;
+      height: 50px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      text-align: right;
+      font-size: 30px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .botao {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      margin: 5px;
+      background-color: #ffb6c1;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .botao:hover {
+      background-color: #ff69b4;
+    }
+    .botao-igual {
+      background-color: #4caf50;
+    }
+    .botao-igual:hover {
+      background-color: #45a049;
+    }
+    .botao-limpar {
+      background-color: #ff6347;
+    }
+    .botao-limpar:hover {
+      background-color: #e55347;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculadora">
+    <input id="display" class="display" type="text" disabled>
+
+    <div>
+      <button class="botao" onclick="adicionarValor('7')">7</button>
+      <button class="botao" onclick="adicionarValor('8')">8</button>
+      <button class="botao" onclick="adicionarValor('9')">9</button>
+      <button class="botao" onclick="adicionarValor('+')">+</button>
+    </div>
+    <div>
+      <button class="botao" onclick="adicionarValor('4')">4</button>
+      <button class="botao" onclick="adicionarValor('5')">5</button>
+      <button class="botao" onclick="adicionarValor('6')">6</button>
+      <button class="botao" onclick="adicionarValor('-')">-</button>
+    </div>
+    <div>
+      <button class="botao" onclick="adicionarValor('1')">1</button>
+      <button class="botao" onclick="adicionarValor('2')">2</button>
+      <button class="botao" onclick="adicionarValor('3')">3</button>
+      <button class="botao" onclick="adicionarValor('*')">*</button>
+    </div>
+    <div>
+      <button class="botao" onclick="adicionarValor('0')">0</button>
+      <button class="botao" onclick="adicionarValor('.')">.</button>
+      <button class="botao-limpar" onclick="limpar()">C</button>
+      <button class="botao" onclick="adicionarValor('/')">/</button>
+    </div>
+    <div>
+      <button class="botao-igual" onclick="calcular()">=</button>
+    </div>
+  </div>
+
+  <script>
+    function adicionarValor(valor) {
+      document.getElementById('display').value += valor;
+    }
+
+    function limpar() {
+      document.getElementById('display').value = '';
+    }
+
+    function calcular() {
+      let resultado = eval(document.getElementById('display').value);
+      document.getElementById('display').value = resultado;
+    }
+  </script>
+
+</body>
+</html>
