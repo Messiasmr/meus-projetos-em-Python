@@ -1,4 +1,4 @@
-import carros2025 from "./tabelacarros.js"; //
+import carros2025 from ".tabelacarros.js"; //
 // Importa o módulo "Express" um framework para construção de aplicativos de web em node.js
 import express from 'express';
 
